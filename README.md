@@ -65,7 +65,7 @@ src/
 
 1. Clone the repository
 ```
- git clone https://github.com/your-username/Social-Media-Interface.git
+ git clone (https://github.com/shubhampathare25/Social-Media-Interface.git)
 ```
 2. Navigate to the project directory
  ```
