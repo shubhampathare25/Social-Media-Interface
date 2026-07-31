@@ -8,11 +8,11 @@
 
 .sidebar {
   min-height: 800px;
+  width: 80x;
 }
 
 .post-card {
   margin: 20px 50px;
-  min-width: 30rem;
 }
 
 .hashtag {
