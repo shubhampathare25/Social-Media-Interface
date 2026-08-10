@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useCallback, useMemo } from "react";
 
 export const PostList = createContext({
   postList: [],
@@ -47,14 +47,19 @@ const PostListProvider = ({ children }) => {
     });
   };
 
-  const deletePost = (postId) => {
-    dispatchPostList({
-      type: "DELETE_POST",
-      payload: {
-        postId,
-      },
-    });
-  };
+  const deletePost = useCallback(
+    (postId) => {
+      dispatchPostList({
+        type: "DELETE_POST",
+        payload: {
+          postId,
+        },
+      });
+    },
+    [dispatchPostList],
+  );
+  const arr = [5, 4, 3, 2, 1];
+  const sortedArr = useMemo(() => arr.sort(), [arr]);
 
   return (
     <PostList.Provider
