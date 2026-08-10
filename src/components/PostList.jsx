@@ -8,7 +8,7 @@ const PostList = () => {
   const { postList, addInitialPosts } = useContext(PostListData);
   const [fetching, setFetching] = useState(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     setFetching(true);
 
     const controller = new AbortController();
@@ -25,7 +25,7 @@ const PostList = () => {
       console.log("Cleaning up UseEffect.");
       controller.abort();
     };
-  }, []);
+  }, []);*/
 
   return (
     <>
