@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
-import CreatePost from "./components/CreatePost";
-import PostList from "./components/PostList";
-import PostListProvider from "./store/post-list-store";
+import Header from "../Header";
+import Footer from "../Footer";
+import Sidebar from "../Sidebar";
+import CreatePost from "../CreatePost";
+import PostList from "../PostList";
+import PostListProvider from "../../store/post-list-store";
 import { useState } from "react";
 
 function App() {

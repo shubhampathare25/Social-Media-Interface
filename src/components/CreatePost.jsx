@@ -18,13 +18,12 @@ const CreatePost = () => {
     const reactions = reactionsElement.current.value;
     const tags = tagsElement.current.value.trim().split(/\s+/);
 
-    // userIdElement.current.value = "";
-    // postTitleElement.current.value = "";
-    // postBodyElement.current.value = "";
-    // reactionsElement.current.value = "";
-    // tagsElement.current.value = "";
+    userIdElement.current.value = "";
+    postTitleElement.current.value = "";
+    postBodyElement.current.value = "";
+    reactionsElement.current.value = "";
+    tagsElement.current.value = "";
 
-    console.log("Sending post to server");
     fetch("https://dummyjson.com/posts/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -38,7 +37,6 @@ const CreatePost = () => {
     })
       .then((res) => res.json())
       .then((post) => {
-        console.log("Got response from server", post);
         addPost(post);
       });
   };
