@@ -23,22 +23,6 @@ const CreatePost = () => {
     postBodyElement.current.value = "";
     reactionsElement.current.value = "";
     tagsElement.current.value = "";
-
-    fetch("https://dummyjson.com/posts/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: postTitle,
-        body: postBody,
-        reactions: reactions,
-        userId: userId,
-        tags: tags,
-      }),
-    })
-      .then((res) => res.json())
-      .then((post) => {
-        addPost(post);
-      });
   };
 
   return (
@@ -113,6 +97,25 @@ const CreatePost = () => {
       </button>
     </form>
   );
+};
+
+export const createPostAction = () => {
+  fetch("https://dummyjson.com/posts/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title: postTitle,
+      body: postBody,
+      reactions: reactions,
+      userId: userId,
+      tags: tags,
+    }),
+  })
+    .then((res) => res.json())
+    .then((post) => {
+      addPost(post);
+      navigate("/");
+    });
 };
 
 export default CreatePost;
