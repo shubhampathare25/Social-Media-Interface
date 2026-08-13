@@ -54,6 +54,9 @@ src/
 
 <img width="939" height="444" alt="image" src="https://github.com/user-attachments/assets/939eddf9-2be2-44c4-a08e-e4c59058a1fb" />
 
+<img width="944" height="441" alt="Screenshot 2026-08-14 005728" src="https://github.com/user-attachments/assets/dbde7058-5b3b-4b4d-99a7-f5d2ddfcbb0a" />
+
+
 ## Getting Started
 
 # Prerequisites
