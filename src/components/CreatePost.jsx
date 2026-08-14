@@ -1,4 +1,4 @@
-import { Form, redirect } from "react-router-dom"; // <--- Imports added here
+import { Form, redirect } from "react-router-dom"; 
 
 const CreatePost = () => {
   return (
@@ -79,18 +79,18 @@ export async function createPostAction(data) {
   const formData = await data.request.formData();
   const postData = Object.fromEntries(formData);
 
-  // Tags la space-separated string aivji array madhe convert karu shakto (optional)
-  postData.tags = postData.tags.split(" ");
+  postData.tags = postData.tags ? postData.tags.split(" ") : [];
+  console.log(postData);
 
-  // await fetch("https://dummyjson.com/posts/add", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(postData), // <--- JSON stringify karne mahatvache ahe
-  // })
-  //   .then((res) => res.json())
-  //   .then((post) => {
-  //     console.log(post);
-  //   });
+  await fetch("https://dummyjson.com/posts/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(postData),
+  })
+    .then((res) => res.json())
+    .then((post) => {
+      console.log(post);
+    });
 
   return redirect("/");
 }
