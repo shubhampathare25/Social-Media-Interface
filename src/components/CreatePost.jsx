@@ -1,8 +1,41 @@
-import { Form, redirect } from "react-router-dom"; 
+import { useContext } from "react";
+import { PostList } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
+  const { addPost } = useContext(PostList);
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const userId = event.target.userId.value;
+    const title = event.target.title.value;
+    const body = event.target.body.value;
+    const reactions = event.target.reactions.value;
+    const tags = event.target.tags.value.split(" ");
+
+    event.target.reset();
+
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: title,
+        body: body,
+        reactions: reactions,
+        userId: userId,
+        tags: tags,
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => {
+        addPost(post);
+        navigate("/");
+      });
+  };
+
   return (
-    <Form method="POST" className="create-post">
+    <form className="create-post" onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="userId" className="form-label">
           Enter your User Id here
@@ -71,28 +104,8 @@ const CreatePost = () => {
       <button type="submit" className="btn btn-primary">
         Post
       </button>
-    </Form>
+    </form>
   );
 };
-
-export async function createPostAction(data) {
-  const formData = await data.request.formData();
-  const postData = Object.fromEntries(formData);
-
-  postData.tags = postData.tags ? postData.tags.split(" ") : [];
-  console.log(postData);
-
-  await fetch("https://dummyjson.com/posts/add", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(postData),
-  })
-    .then((res) => res.json())
-    .then((post) => {
-      console.log(post);
-    });
-
-  return redirect("/");
-}
 
 export default CreatePost;
