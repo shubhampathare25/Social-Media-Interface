@@ -2,13 +2,23 @@
   display: flex;
 }
 
+[data-bs-theme="dark"] .app-container {
+  background-color: #212529;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .content {
+  background-color: #212529;
+  color: #fff;
+}
+
 .container {
   width: 100%;
 }
 
 .sidebar {
   min-height: 800px;
-  width: 80x;
+  width: 80px;
 }
 
 .post-card {

@@ -11,16 +11,23 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("Home");
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((currTheme) => (currTheme === "light" ? "dark" : "light"));
+  };
 
   return (
     <PostListProvider>
-      <div className="app-container">
+      {/* 1. Ithe data-bs-theme={theme} add kela */}
+      <div className="app-container" data-bs-theme={theme}>
         <Sidebar
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
         ></Sidebar>
         <div className="content">
-          <Header></Header>
+          {/* 2. Ithe Header la props pass kele */}
+          <Header theme={theme} toggleTheme={toggleTheme}></Header>
           <Outlet />
           <Footer></Footer>
         </div>
@@ -30,4 +37,3 @@ function App() {
 }
 
 export default App;
-
