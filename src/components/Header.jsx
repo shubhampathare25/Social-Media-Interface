@@ -3,7 +3,7 @@ import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 const Header = ({ theme, toggleTheme }) => {
   return (
     <header className={`p-3 border-bottom ${theme === "dark" ? "text-bg-dark" : "bg-light"}`}>
-      <div className="container">
+      <div className="container-fluid px-4">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a
             href="/"
@@ -68,7 +68,7 @@ const Header = ({ theme, toggleTheme }) => {
             >
               {theme === "light" ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
             </button>
-            {/* Login button class dynamic keli ahe jevheun light mode madhye dark text disel */}
+            {}
             <button
               type="button"
               className={`btn btn-${theme === "dark" ? "outline-light" : "outline-dark"} me-2`}
