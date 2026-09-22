@@ -19,18 +19,26 @@ function App() {
 
   return (
     <PostListProvider>
-      {/* 1. Ithe data-bs-theme={theme} add kela */}
-      <div className="app-container" data-bs-theme={theme}>
+      {/* 1. App container la d-flex kela jevheun sidebar ani right content side-by-side rahtil */}
+      <div className="app-container d-flex" data-bs-theme={theme} style={{ minHeight: "100vh" }}>
+        
+        {/* Sidebar ekdam left la ubha rahil */}
         <Sidebar
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
         ></Sidebar>
-        <div className="content">
-          {/* 2. Ithe Header la props pass kele */}
+
+        {/* 2. Right side cha aakha area (Header + Content + Footer) */}
+        <div className="right-content w-100 d-flex flex-column">
           <Header theme={theme} toggleTheme={toggleTheme}></Header>
-          <Outlet />
+          
+          <div className="content p-3 flex-grow-1">
+            <Outlet />
+          </div>
+          
           <Footer></Footer>
         </div>
+
       </div>
     </PostListProvider>
   );
