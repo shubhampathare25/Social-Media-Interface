@@ -1,7 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
+import "bootstrap/dist/css/Bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import CreatePost from "./components/CreatePost.jsx";
 import App from "./components/routes/App";
 import PostList, { postLoader } from "./components/PostList.jsx";
