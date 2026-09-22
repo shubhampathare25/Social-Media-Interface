@@ -60,7 +60,6 @@ const Header = ({ theme, toggleTheme }) => {
             />
           </form>
           <div className="text-end d-flex align-items-center">
-            {/* Dark / Light Mode Toggle Button */}
             <button
               type="button"
               className={`btn btn-${theme === "light" ? "dark" : "light"} me-2`}
@@ -68,13 +67,23 @@ const Header = ({ theme, toggleTheme }) => {
             >
               {theme === "light" ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
             </button>
-            {}
-            <button
-              type="button"
-              className={`btn btn-${theme === "dark" ? "outline-light" : "outline-dark"} me-2`}
-            >
-              Login
-            </button>
+            
+            <div className="dropdown me-2">
+              <button
+                type="button"
+                className={`btn btn-${theme === "dark" ? "outline-light" : "outline-dark"} dropdown-toggle`}
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Login
+              </button>
+              <ul className="dropdown-menu shadow">
+                <li><h6 className="dropdown-header">SIGN IN TO SOCIAL MEDIA</h6></li>
+                <li><a className="dropdown-item" href="#">User Login</a></li>
+                <li><a className="dropdown-item" href="#">Admin Login</a></li>
+              </ul>
+            </div>
+
             <button type="button" className="btn btn-warning">
               Sign-up
             </button>
