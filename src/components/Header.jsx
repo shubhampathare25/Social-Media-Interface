@@ -78,7 +78,12 @@ const Header = ({ theme, toggleTheme }) => {
                 Login
               </button>
 
-              <button type="button" className="btn btn-warning">
+              <button 
+                type="button" 
+                className="btn btn-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#signupModal"
+              >
                 Sign-up
               </button>
             </div>
@@ -96,14 +101,42 @@ const Header = ({ theme, toggleTheme }) => {
             <div className="modal-body">
               <form>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                  <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter your email" />
+                  <label htmlFor="loginEmail" className="form-label">Email address</label>
+                  <input type="email" className="form-control" id="loginEmail" placeholder="Enter your email" />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Enter your password" />
+                  <label htmlFor="loginPassword" className="form-label">Password</label>
+                  <input type="password" className="form-control" id="loginPassword" placeholder="Enter your password" />
                 </div>
-                <button type="submit" className="btn btn-primary w-100 mt-2">Submit</button>
+                <button type="submit" className="btn btn-primary w-100 mt-2">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="modal fade" id="signupModal" tabIndex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className={`modal-content ${theme === "dark" ? "text-bg-dark" : ""}`}>
+            <div className="modal-header">
+              <h5 className="modal-title" id="signupModalLabel">Create an Account</h5>
+              <button type="button" className={`btn-close ${theme === "dark" ? "btn-close-white" : ""}`} data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div className="mb-3">
+                  <label htmlFor="signupName" className="form-label">Full Name</label>
+                  <input type="text" className="form-control" id="signupName" placeholder="Enter your full name" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="signupEmail" className="form-label">Email address</label>
+                  <input type="email" className="form-control" id="signupEmail" placeholder="Enter your email" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="signupPassword" className="form-label">Password</label>
+                  <input type="password" className="form-control" id="signupPassword" placeholder="Create a password" />
+                </div>
+                <button type="submit" className="btn btn-warning w-100 mt-2 text-dark fw-bold">Sign Up</button>
               </form>
             </div>
           </div>
