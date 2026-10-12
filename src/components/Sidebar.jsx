@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
@@ -24,7 +24,11 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <Link to="/" className="nav-link text-white" aria-current="page">
+            <NavLink to="/" className={({ isActive }) =>
+                `nav-link ${isActive ? "text-danger fw-bold" : "text-white"}`
+              }
+              aria-current="page"
+            >
               <svg
                 className="bi pe-none me-2"
                 width="16"
@@ -34,10 +38,13 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
                 <use xlinkHref="#home"></use>
               </svg>
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/create-post" className="nav-link text-white">
+            <NavLink to="/create-post" className={({ isActive }) =>
+                `nav-link ${isActive ? "text-danger fw-bold" : "text-white"}`
+              }
+            >
               <svg
                 className="bi pe-none me-2"
                 width="16"
@@ -47,7 +54,7 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
                 <use xlinkHref="#speedometer2"></use>
               </svg>
               Create Post
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <hr />
