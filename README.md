@@ -52,9 +52,9 @@ src/
 ```
 ## Preview
 
-<img width="939" height="444" alt="image" src="https://github.com/user-attachments/assets/939eddf9-2be2-44c4-a08e-e4c59058a1fb" />
+<img width="937" height="444" alt="Screenshot 2026-10-12 100556" src="https://github.com/user-attachments/assets/9598ee2b-6ac5-48ab-843e-04eb709c811d" />
 
-<img width="944" height="441" alt="Screenshot 2026-08-14 005728" src="https://github.com/user-attachments/assets/dbde7058-5b3b-4b4d-99a7-f5d2ddfcbb0a" />
+<img width="946" height="443" alt="Screenshot 2026-10-12 100754" src="https://github.com/user-attachments/assets/d47d1621-942f-4adb-89b5-251724e16aa9" />
 
 
 ## Getting Started
